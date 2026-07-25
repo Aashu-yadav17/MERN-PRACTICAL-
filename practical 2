@@ -1,0 +1,187 @@
+// app.jsx
+import Header from "./components/Header";                              
+import HotelCard from "./components/HotelCard";
+import Footer from "./components/Footer";
+function App() {
+  return (
+    <div>
+      <Header />
+      <HotelCard
+        resturant="MH 99 Burger"
+        food="Crispy Burger"
+        price={100}
+        discount={10}
+        rating={4.2}
+      />
+      <Footer />
+    </div>
+  );
+}
+export default App;
+
+//HotelCard.jsx
+
+function HotelCard(props) {
+    const discount = (props.price * props.discount) / 100;
+    const finalPrice = props.price - discount;
+    return (
+        <div>
+            <h2>{props.resturant}</h2>
+            <p>Food Item: {props.food}</p>
+            <p>Original Price: ₹{props.price}</p>
+            <p>Discount: {props.discount}%</p>
+            <p>Discount Amount: ₹{discount}</p>
+            <p><b>Final Price: ₹{finalPrice}</b></p>
+            <p>Rating: {props.rating}</p>
+            <hr />
+        </div>
+    );
+}
+export default HotelCard;
+
+//Header.jsx
+function Header()
+{
+    return(
+        <div>
+            <h1>Online food Delivery Dashboard</h1>
+            <hr/>
+        </div>
+    );
+}
+export default Header;
+
+//Footer.jsx
+function Footer()
+{
+    return(
+        <div>
+            <p>© 2026 Food Delivery</p>
+            <h3>Aashu Yadav</h3>
+            <hr/>
+        </div>
+    );
+}
+export default Footer;
+//4c
+//App.jsx
+import{useState} from "react";
+function App() {
+    const [count, setCount] = useState(0);
+  return (
+    <div>
+      <h1>Button click counter</h1>
+      <hr/>
+      <h2>User Click : {count} Times </h2>
+      <button onClick={() => setCount(count+1)}> click me </button>
+      <h3>Aashu Yadav</h3>
+    </div>
+  );
+}
+export default App;
+//practical 4d
+//App.jsx
+import StudentForm from "./components/StudentForm";
+function App() {
+    return(
+        <div>
+            <StudentForm />
+        </div>
+    );
+}
+export default App;
+
+//Student.jsx
+import {useState} from "react";
+function StudentFrom(){
+  const [name, setName] = useState("");
+  const [rollNo, setRollNo] = useState("");
+  const [branch, setBranch] = useState("");
+  const [cgpa, setCgpa] = useState("");
+  return (
+    <div>
+      <h2>Studen Registration Form</h2>
+      <hr/>
+      <label>Name : </label>
+      <input
+      type="type"
+      placeholder="Enter your name"
+      value={name}
+      onChange={(e) => setName(e.target.value)}
+      />
+      <hr/>
+      <label> Roll No : </label>
+      <input
+      type="number"
+      placeholder="Enter roll no"
+      value={rollNo}
+      onChange={(e) => setRollNo(e.target.value)}
+      />
+      <hr/>
+      <label>Branch : </label>
+      <input
+      type="type"
+      placeholder="Enter your branch"
+      value={branch}
+      onChange={(e) => setBranch(e.target.value)}
+      />
+      <hr/>
+      <label>CGPA : </label>
+      <input
+      type="number"
+      placeholder="Enter CGPA"
+      value={cgpa}
+      onChange={(e) => setCgpa(e.target.value)}
+      />
+      <hr/>
+      <h3>Student details</h3>
+      <p>Name: {name}</p>
+      <p>RollNo: {rollNo}</p>
+      <p>Branch: {branch}</p>
+      <p>CGPA: {cgpa}</p>
+    </div>
+  );
+}
+export default StudentFrom;
+//practical 4 e
+
+
+
+
+//pratical 4f
+1. counter .
+import { useState } from "react";
+function App() {
+  // State Variable
+  const [count, setCount] = useState(0);
+  // Function to decrease count
+  const handleDecrease = () => {
+    if (count > 0) {
+      setCount(count - 1);
+    } else {
+      setCount(0);
+    }
+  };
+  return (
+    <div>
+      <h1>Button Click Counter</h1>
+      <hr />
+      <h2>Aashu Clicks: {count} Times</h2>
+
+      <button onClick={() => setCount(count + 1)}>
+        Increase
+      </button>
+      &nbsp;&nbsp;
+      <button onClick={handleDecrease}>
+        Decrease
+      </button>
+     &nbsp;&nbsp;
+      <button onClick={() => setCount(0)}>
+        Reset
+      </button>
+    </div>
+  );
+}
+export default App;
+
+2.todo list
