@@ -1,3 +1,72 @@
+a)
+npm install react-router-dom
+b)
+
+App.jsx
+import { BrowserRouter, Routes, Route, Link} from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+function App() {
+  return (
+    <BrowserRouter>
+    <h1>My React Application </h1>
+    <nav>
+      <Link to="/"> Home </Link>
+      <br/>
+       <Link to="/about"> about </Link>
+      <br/>
+       <Link to="/contact"> Contact </Link>
+      <br/>
+    </nav>
+    <br/>
+    <Routes>
+      <Route path="/" element={<Home/>} />
+      <Route path="/about" element={<About/>} />
+      <Route path="/contact" element={<Contact/>} />
+    </Routes>
+     </BrowserRouter>
+  );
+}
+export default App;
+
+
+
+
+Home.jsx
+function Home(){
+    return(
+        <div>
+        <h1>Home Page</h1>
+        <p>Welcome to our React Application</p>
+    </div>
+
+    );
+
+}
+export default Home;
+About.jsx 
+function About(){
+    return(
+        <div>
+            <h1>About Page</h1>
+            <p>this page contains information about our application .</p>
+        </div>
+    );
+}
+export default About;
+Contact.jsx 
+function Contact(){
+    return(
+        <div>
+            <h1>Contact Page</h1>
+            <p>Email: aashyada6@gmail.com</p>
+        </div>
+    );
+}export default Contact;
+
+c)
+
 function Dashboard(){
     return(
         <div>
